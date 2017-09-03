@@ -1,0 +1,12 @@
+<hr/>
+<div style="position: relative; text-align: center; margin-top: 10px; min-width: 600px; ">
+  <div id="topBar">
+    <div id="actions">
+      <input type="text" #inputField class="search">
+      <button #scroolLogs class="scroll" (click)="logRecordSet.scroll()">Scroll</button>
+      <button #clearLogs class="clear" (click)="this.clear()">X</button>
+    </div>
+    <div id="caption">Log:</div>
+  </div>
+  <app-log-record-set #logRecordSet></app-log-record-set>
+</div>
