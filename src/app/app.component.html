@@ -1,6 +1,7 @@
 <h1>Hi</h1>
 <br />
-<popup #p1>
+<popup (confirmClick)="confirm()" (cancelClick)="cancel()" #p1>
   Some important message
 </popup>
 <button (click)="bClick()">Speak to me!</button>
+<app-logs></app-logs>
