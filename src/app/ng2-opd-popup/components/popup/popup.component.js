@@ -16,7 +16,7 @@ export var PopupComponent = (function () {
             this.mainStyle = { 'border-color': this.popupService.options.color, 'border-style': 'solid', 'border-width': '1px', 'width': '96%', 'margin-left': '2%' };
         }
         else {
-            if (this.popupService.options != undefined) {
+            if (this.popupService.options !== undefined) {
                 var width = this.popupService.options.widthProsentage + "%";
                 var marginLeft = (((this.popupService.options.widthProsentage - 100) / 2) * -1) + "%";
                 var color = this.popupService.options.color;
@@ -30,7 +30,7 @@ export var PopupComponent = (function () {
             _this.setOptions(options);
         });
         this.popupService.visibleChanged.subscribe(function (val) {
-            if (val == true) {
+            if (val === true) {
                 _this.show();
             }
             else {
@@ -56,77 +56,77 @@ export var PopupComponent = (function () {
         this.visible = true;
     };
     PopupComponent.prototype.setOptions = function (options) {
-        if (options.widthProsentage != undefined) {
+        if (options.widthProsentage !== undefined) {
             this.popupService.options.widthProsentage = options.widthProsentage;
         }
         else {
             this.popupService.options.widthProsentage = 40;
         }
-        ;
-        if (options.cancleBtnClass != undefined) {
+
+        if (options.cancleBtnClass !== undefined) {
             this.popupService.options.cancleBtnClass = options.cancleBtnClass;
         }
         else {
             this.popupService.options.cancleBtnClass = "ng2-opd-popup-Button";
         }
-        ;
-        ;
-        if (options.confirmBtnClass != undefined) {
+
+
+        if (options.confirmBtnClass !== undefined) {
             this.popupService.options.confirmBtnClass = options.confirmBtnClass;
         }
         else {
             this.popupService.options.confirmBtnClass = "ng2-opd-popup-Button";
         }
-        ;
-        if (options.color != undefined) {
+
+        if (options.color !== undefined) {
             this.popupService.options.color = options.color;
         }
         else {
             this.popupService.options.color = "#5cb85c";
         }
-        ;
-        if (options.header != undefined) {
+
+        if (options.header !== undefined) {
             this.popupService.options.header = options.header;
         }
         else {
             this.popupService.options.header = "...";
         }
-        ;
-        if (options.showButtons != undefined) {
+
+        if (options.showButtons !== undefined) {
             this.popupService.options.showButtons = options.showButtons;
         }
         else {
             this.popupService.options.showButtons = true;
         }
-        ;
-        if (options.confirmBtnContent != undefined) {
+
+        if (options.confirmBtnContent !== undefined) {
             this.popupService.options.confirmBtnContent = options.confirmBtnContent;
         }
         else {
             this.popupService.options.confirmBtnContent = "OK";
         }
-        ;
-        if (options.cancleBtnContent != undefined) {
+
+        if (options.cancleBtnContent !== undefined) {
             this.popupService.options.cancleBtnContent = options.cancleBtnContent;
         }
         else {
             this.popupService.options.cancleBtnContent = "Cancle";
         }
-        ;
-        if (options.animationDuration != undefined) {
+
+        if (options.animationDuration !== undefined) {
             this.popupService.options.animationDuration = options.animationDuration;
         }
         else {
             this.popupService.options.animationDuration = 1;
         }
-        ;
-        if (options.animation != undefined) {
+
+        if (options.animation !== undefined) {
             this.popupService.options.animation = options.animation;
         }
         else {
             this.popupService.options.animation = "fadeInDown";
         }
-        ;
+
     };
     PopupComponent.prototype.hide = function () {
         this.visible = false;
@@ -137,11 +137,12 @@ export var PopupComponent = (function () {
     };
     PopupComponent.prototype.confirmYes = function () {
         this.confirmClick.emit();
+        this.hide();
     };
     PopupComponent.prototype.setWidth = function () {
         this.setSize = new Size();
         var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-        if (this.popupService.options.widthProsentage == undefined) {
+        if (this.popupService.options.widthProsentage === undefined) {
             this.setSize.width = "40%";
             this.setSize.marginLeft = "30%";
         }

@@ -1,5 +1,5 @@
 import { OnInit, EventEmitter } from '@angular/core';
-import { Options } from "./options";
+import { Options } from './options';
 export declare class Popup implements OnInit {
     visibleChanged: EventEmitter<any>;
     optionsChanged: EventEmitter<any>;

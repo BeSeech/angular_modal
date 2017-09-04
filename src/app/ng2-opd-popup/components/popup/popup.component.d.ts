@@ -1,7 +1,7 @@
 import { OnInit, EventEmitter } from '@angular/core';
 import { Popup } from './popup.service';
-import { Size } from "./size";
-import { Options } from "./options";
+import { Size } from './size';
+import { Options } from './options';
 export declare class PopupComponent implements OnInit {
     popupService: Popup;
     visible: boolean;
