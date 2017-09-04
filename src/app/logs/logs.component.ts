@@ -2,9 +2,12 @@ import {Component, ElementRef, OnInit, ViewChild, Input, Inject} from '@angular/
 import {Observable} from 'rxjs/Observable';
 import {LogStore} from './redux/store';
 import {LogState} from './redux/state';
-import {Store} from 'redux';
-import {ActionFacility} from './redux/action'
-import 'rxjs';
+import * as Redux from 'redux';
+import {ActionFacility} from './redux/action';
+import 'rxjs/add/observable/fromEvent';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
 
 
 @Component({
@@ -19,7 +22,7 @@ export class LogsComponent implements OnInit {
   @ViewChild('inputField') private inputField: ElementRef;
   private keyUpObservable: any;
 
-  constructor(@Inject(LogStore) private store: Store<LogState>) {
+  constructor(@Inject(LogStore) private store: Redux.Store<LogState>) {
   }
 
   ngOnInit() {

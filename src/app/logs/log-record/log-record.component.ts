@@ -2,7 +2,7 @@ import {Component, Inject, Input, OnInit} from '@angular/core';
 import {LogItem} from '../redux/logItemModel';
 import {LogState} from '../redux/state';
 import {LogStore} from '../redux/store';
-import {Store} from 'redux';
+import * as Redux from 'redux';
 
 @Component({
   selector: 'app-log-record',
@@ -13,7 +13,7 @@ export class LogRecordComponent implements OnInit {
 
   @Input() public item: LogItem;
 
-  constructor(@Inject(LogStore) private store: Store<LogState>) { }
+  constructor(@Inject(LogStore) private store: Redux.Store<LogState>) { }
 
   ngOnInit() {
   }

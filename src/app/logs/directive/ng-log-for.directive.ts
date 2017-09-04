@@ -3,7 +3,7 @@ import {
   AfterContentInit, ChangeDetectorRef, Directive, DoCheck, Inject, Input,
   IterableDiffer, IterableDiffers, TemplateRef, ViewContainerRef, ViewRef
 } from '@angular/core';
-import {Store} from 'redux';
+import * as Redux from 'redux';
 import {LogStore} from '../redux/store';
 import {LogState} from '../redux/state';
 import {LogItem} from '../redux/logItemModel';
@@ -28,7 +28,7 @@ export class NgLogForDirective implements AfterContentInit, DoCheck {
   constructor(private viewContainer: ViewContainerRef,
               private template: TemplateRef<any>,
               private  differs: IterableDiffers,
-              @Inject(LogStore) private store: Store<LogState>) {
+              @Inject(LogStore) private store: Redux.Store<LogState>) {
   }
 
   ngAfterContentInit(): void {

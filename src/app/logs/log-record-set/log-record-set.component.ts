@@ -1,5 +1,5 @@
 import {Component, Inject, OnInit, OnDestroy, ElementRef, AfterViewChecked, ViewChild} from '@angular/core';
-import {Store} from 'redux';
+import * as Redux from 'redux';
 import {LogStore} from '../redux/store';
 import {LogsService} from '../logs.service';
 import {LogState} from '../redux/state';
@@ -16,7 +16,7 @@ export class LogRecordSetComponent implements OnInit, OnDestroy, AfterViewChecke
 
   @ViewChild('myLogs') private htmlElement: ElementRef;
 
-  constructor(private logService: LogsService, @Inject(LogStore) public store: Store<LogState>) {
+  constructor(private logService: LogsService, @Inject(LogStore) public store: Redux.Store<LogState>) {
   }
 
   ngOnInit() {
